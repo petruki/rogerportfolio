@@ -1,21 +1,22 @@
 import React from "react"
 import Fade from "react-reveal/Fade"
-import data from "../content"
 
-const Footer = () => {
+const Footer = (props) => {
+  const { contact, header } = props.data
+
   return (
     <div className="section" id="contact">
       <div className="container">
         <div className="footer-container">
           <Fade bottom cascade>
             <h1>Contact</h1>
-            <h2>{data.contactSubHeading}</h2>
+            <h2>{contact.contactSubHeading}</h2>
           </Fade>
-          <a className="email-link" href={`mailto:${data.contactEmail}`}>
-            {data.contactEmail}
+          <a className="email-link" href={`mailto:${header.contactEmail}`}>
+            {header.contactEmail}
           </a>
           <div className="social-icons">
-            {data.social.map((socialLink, index) => (
+            {contact.social.map((socialLink, index) => (
               <a id="social-icon"
                 key={index}
                 href={socialLink.url}

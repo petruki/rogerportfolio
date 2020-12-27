@@ -1,8 +1,8 @@
 import React from "react"
 import Fade from "react-reveal/Fade"
-import data from "../content"
 
-const About = () => {
+const About = (props) => {
+  const { about } = props.data
   return (
     <div className="secion" id="about" style={{ background: "#1a1a1a" }}>
       <div className="container">
@@ -12,20 +12,20 @@ const About = () => {
               <h1>About Me</h1>
             </Fade>
             <p>
-              {data.aboutParaOne}
+              {about.aboutParaOne}
               <br></br>
               <br></br>
-              {data.aboutParaTwo}
+              {about.aboutParaTwo}
               <br></br>
               <br></br>
-              {data.aboutParaThree}
+              {about.aboutParaThree}
               <br></br>
               <br></br>
-              {data.aboutParaFour}
+              {about.aboutParaFour}
             </p>
           </div>
           <div className="image-wrapper">
-            <img id="about-image" src={data.aboutImage} alt="about"></img>
+            <img id="about-image" src={about.aboutImage} alt="about"></img>
           </div>
         </div>
       </div>
