@@ -1,3 +1,13 @@
+@keyframes showIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+}
+
 .skill-samples-container {
     color: white;
     display: grid;
@@ -46,6 +56,7 @@
 }
 
 .Modal {
+    animation: .2s ease-in 0s 1 showIn;
     position: absolute;
     inset: 50% auto auto 50%;
     border: 1px solid rgb(53, 53, 53);

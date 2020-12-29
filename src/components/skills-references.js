@@ -5,8 +5,9 @@ import '../styles/skills-references.scss';
 
 const modalStyle = {
     overlay: {
-        backgroundColor: 'black',
-        zIndex: 1
+        animation: '.2s ease-in 0s 1 showIn',
+        backgroundColor: 'rgba(0, 0, 0, 0.87)',
+        zIndex: 1,
     }
 };
 
