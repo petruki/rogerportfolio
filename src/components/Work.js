@@ -1,10 +1,9 @@
-import React from "react"
-import Card from "./atoms/Card"
-import Fade from "react-reveal/Fade"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Card from './atoms/Card';
+import Fade from 'react-reveal/Fade';
 
-const Work = (props) => {
-  const { work } = props.data
-
+const Work = ({ work }) => {
   return (
     <div className="section" id="work">
       <div className="container">
@@ -29,7 +28,11 @@ const Work = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Work
+Work.propTypes = {
+  work: PropTypes.array.isRequired
+};
+
+export default Work;

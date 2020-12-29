@@ -1,4 +1,4 @@
-const API_URL = 'https://draw-dtz.begin.app/graphql'
+const API_URL = 'https://draw-dtz.begin.app/graphql';
 // const API_URL = 'http://localhost:3333/graphql'
 
 const query = `
@@ -36,15 +36,15 @@ const query = `
             url
         }
     }
-}`
+}`;
 
 async function queryData() {
     let result = await fetch(API_URL, {
         method: 'post',
         body: JSON.stringify({query})
-    })
+    });
 
-    return await result.json()
+    return await result.json();
 }
 
-export default queryData
+export default queryData;

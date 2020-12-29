@@ -1,15 +1,14 @@
-import React from "react"
-import Fade from "react-reveal/Fade"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
-const Header = (props) => {
-  const { header } = props.data
-
+const Header = ({ header }) => {
   return (
     <div className="section" id="home">
       <div className="container">
         <div className="header-wrapper">
           <Fade bottom>
-            <h2> Hi, I'm {header.name}</h2>
+            <h2> Hi, I&apos;m {header.name}</h2>
             <img id="avatar" src={header.avatarImg}  alt="avatar"></img>
           </Fade>
           <Fade bottom cascade>
@@ -31,7 +30,11 @@ const Header = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+Header.propTypes = {
+  header: PropTypes.object.isRequired
+};
+
+export default Header;

@@ -1,9 +1,8 @@
-import React from "react"
-import Fade from "react-reveal/Fade"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
-const Footer = (props) => {
-  const { contact, header } = props.data
-
+const Footer = ({ contact, header }) => {
   return (
     <div className="section" id="contact">
       <div className="container">
@@ -30,7 +29,12 @@ const Footer = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+Footer.propTypes = {
+  contact: PropTypes.object.isRequired,
+  header: PropTypes.object.isRequired
+};
+
+export default Footer;

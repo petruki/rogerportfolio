@@ -49,10 +49,19 @@
     .skill:hover {
       transform: scale(1.05, 1.05);
       background: #333333;
+
+      .btn {
+        opacity: 1;
+      }
     }
     
     .skill.select {
       transition: all .2s cubic-bezier(0.100, 0.50, 0.30, 1);
     }
+  }
+
+  .btn {
+    cursor: pointer;
+    opacity: 0;
   }
 }

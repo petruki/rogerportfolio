@@ -1,6 +1,6 @@
-import React from "react"
-import Fade from "react-reveal/Fade"
-import data from "../content"
+import React from 'react';
+import Fade from 'react-reveal/Fade';
+import data from '../content';
 
 const Promotion = () => {
   return (
@@ -14,7 +14,7 @@ const Promotion = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Promotion
+export default Promotion;

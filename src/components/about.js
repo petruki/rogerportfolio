@@ -1,10 +1,10 @@
-import React from "react"
-import Fade from "react-reveal/Fade"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
-const About = (props) => {
-  const { about } = props.data
+const About = ({ about }) => {
   return (
-    <div className="secion" id="about" style={{ background: "#1a1a1a" }}>
+    <div className="secion" id="about" style={{ background: '#1a1a1a' }}>
       <div className="container">
         <div className="about-section">
           <div className="content">
@@ -30,7 +30,11 @@ const About = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+About.propTypes = {
+  about: PropTypes.any.isRequired
+};
+
+export default About;

@@ -5,9 +5,10 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import Navbar from "./Navbar"
-import "../styles/mains.scss"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Navbar from './Navbar';
+import '../styles/mains.scss';
 
 const Layout = ({ children }) => {
   return (
@@ -15,6 +16,12 @@ const Layout = ({ children }) => {
       <Navbar></Navbar>
       <main>{children}</main>
     </>
-  )
-}
-export default Layout
+  );
+};
+
+Layout.propTypes = {
+  children: PropTypes.any.isRequired
+};
+
+
+export default Layout;
