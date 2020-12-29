@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
-import '../styles/skill-samples.scss';
+import '../styles/skills-references.scss';
 
 const modalStyle = {
     overlay: {
@@ -12,7 +12,7 @@ const modalStyle = {
 
 Modal.setAppElement('#___gatsby');
 
-const SkillSamples = ({ modalIsOpen, closeModal, img, references }) => {
+const SkillsReferences = ({ modalIsOpen, closeModal, img, references }) => {
 
     function onAfterOpen() {
         document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
@@ -31,29 +31,28 @@ const SkillSamples = ({ modalIsOpen, closeModal, img, references }) => {
                 <img src={img}></img>
                 <div id="btnClose" role="button" onClick={closeModal}>close</div> 
 
+                <div className="skill-detail-container">
                 {references.map((ref, index) => 
-                    <div key={index} className="skill-detail-container">
-                        <div className="skill-sample-detail">
-                            {'Link: '}
-                            <a 
-                                href={ref.link} 
-                                target="_blank" 
-                                rel="noopener noreferrer">{ref.title}
-                            </a>
-                            <p>{ref.description}</p>
-                        </div>
-                    </div>)
-                }
+                    <div key={index} className="skill-sample-detail">
+                        {'Link: '}
+                        <a 
+                            href={ref.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer">{ref.title}
+                        </a>
+                        <p>{ref.description}</p>
+                    </div>)}
+                </div>
             </div>
         </Modal>
     );
 };
 
-SkillSamples.propTypes = {
+SkillsReferences.propTypes = {
     modalIsOpen: PropTypes.bool.isRequired,
     closeModal: PropTypes.func.isRequired,
     img: PropTypes.string.isRequired,
     references: PropTypes.array.isRequired
 };
 
-export default SkillSamples;
+export default SkillsReferences;

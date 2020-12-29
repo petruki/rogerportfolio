@@ -3,7 +3,7 @@
     display: grid;
 
     img {
-        height: 2rem;
+        height: 2.5rem;
         margin-right: 10px;
         padding-bottom: 1rem;
     }
@@ -21,6 +21,7 @@
     .skill-detail-container {
         overflow-y: auto;
         max-height: 400px;
+        max-width: 400px;
     }
 
     .skill-sample-detail {
@@ -58,4 +59,11 @@
     transform: translate(-50%, -50%);
     min-width: 20%;
     border-radius: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+    .Modal {
+        width: 80%;
+        margin: auto;
+    }
 }

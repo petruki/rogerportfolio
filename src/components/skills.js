@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SkillSamples from './skill-samples';
+import SkillSamples from './skills-references';
 
 const Skills = ({ skills }) => {
   const [modalIsOpen, setIsOpen] = React.useState(false);

@@ -27,7 +27,12 @@ const query = `
     skills {
         id
         img,
-        para
+        para,
+        references {
+            title,
+            description,
+            link
+        }
     }
     contact {
         contactSubHeading
