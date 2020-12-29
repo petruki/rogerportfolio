@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 const API_URL = 'https://draw-dtz.begin.app/graphql';
 // const API_URL = 'http://localhost:3333/graphql'
 
