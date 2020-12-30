@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
+import LightSpeed from 'react-reveal/LightSpeed';
 
 const Header = ({ header }) => {
   return (
@@ -11,17 +12,14 @@ const Header = ({ header }) => {
             <h2> Hi, I&apos;m {header.name}</h2>
             <img id="avatar" src={header.avatarImg}  alt="avatar"></img>
           </Fade>
-          <Fade bottom cascade>
+          <Fade big>
             <div className="heading-wrapper">
-              <h1>
-                {header.headerTagline[0]}
-              </h1>
-              <h1>
-                {header.headerTagline[1]}
-              </h1>
-              <h1>
-                {header.headerTagline[2]}
-              </h1>
+              <LightSpeed left><h1>{header.headerTagline[0]} </h1>
+              </LightSpeed>
+              <LightSpeed right><h1>{header.headerTagline[1]}</h1>
+              </LightSpeed>
+              <LightSpeed left><h1>{header.headerTagline[2]}</h1>
+              </LightSpeed>
             </div>
           </Fade>
           <Fade bottom>

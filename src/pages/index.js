@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Fade from 'react-reveal/Fade';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -26,13 +27,13 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Roger's Portfolio" />
       {data ?
-        <div>
+        <Fade big>
           <Header header={data.header}></Header>
           <Work work={data.work}></Work>
           <About about={data.about}></About>
           <Skills skills={data.skills}></Skills>
           <Footer contact={data.contact} header={data.header}></Footer>
-        </div>
+        </Fade>
       : ''}
     </Layout>
   );
