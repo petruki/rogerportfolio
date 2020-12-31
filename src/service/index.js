@@ -1,7 +1,8 @@
 import fetch from 'node-fetch';
+import * as imagesBank from '../images';
 
 const API_URL = 'https://draw-dtz.begin.app/graphql';
-// const API_URL = 'http://localhost:3333/graphql'
+// const API_URL = 'http://localhost:3333/graphql';
 
 const query = `
 {  
@@ -13,7 +14,6 @@ const query = `
         contactEmail
     }
     work {
-        id,
         title,
         para,
         imageSrc,
@@ -27,7 +27,6 @@ const query = `
         aboutImage
     }
     skills {
-        id
         img,
         para,
         references {
@@ -51,7 +50,24 @@ async function queryData() {
         body: JSON.stringify({query})
     });
 
-    return await result.json();
+    let response = await result.json();
+    loadLocalImages(response);
+
+    return response;
+}
+
+function loadLocalImages({ data }) {
+    data.work.map(project => {
+        if (project.imageSrc.indexOf('http') != 0) {
+            project.imageSrc = imagesBank[project.imageSrc];
+        }
+    });
+
+    data.skills.map(skill => {
+        if (skill.img.indexOf('http') != 0) {
+            skill.img = imagesBank[skill.img];
+        }
+    });
 }
 
 export default queryData;

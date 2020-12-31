@@ -22,8 +22,8 @@ const Skills = ({ skills }) => {
         <div className="skills-container">
           <h1>Skills</h1>
           <div className="skills-grid">
-            {skills.map(skill => (
-              <div className="skill select" key={skill.id}>
+            {skills.map((skill, id) => (
+              <div className="skill select" key={id}>
                 <img src={skill.img} alt="css"></img>
                 <p>{skill.para}</p>
                 {skill.references && skill.references.length ?
