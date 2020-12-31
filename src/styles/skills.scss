@@ -17,6 +17,7 @@
     grid-gap: 20px;
 
     @include media(">=phone", "<lgphone") {
+      width: 90vw;
       grid-template-columns: 1fr;
     }
 
