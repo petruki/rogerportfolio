@@ -27,13 +27,13 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Roger's Portfolio" />
       {data ?
-        <Fade big>
+        <div>
           <Header header={data.header}></Header>
           <Work work={data.work}></Work>
           <About about={data.about}></About>
           <Skills skills={data.skills}></Skills>
           <Footer contact={data.contact} header={data.header}></Footer>
-        </Fade>
+        </div>
       : ''}
     </Layout>
   );

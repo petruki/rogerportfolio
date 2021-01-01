@@ -4,10 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @include media(">=phone", "<lgphone") {
-    width: 90vw;
-  }
   
   h1 {
     font-size: 3rem;
@@ -29,7 +25,6 @@
     margin-top: 20px;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    
     @include media(">=phone", "<lgphone") {
       grid-template-columns: 1fr;
     }
