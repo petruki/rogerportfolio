@@ -1,59 +1,30 @@
 import fetch from 'node-fetch';
 import * as imagesBank from '../images';
 
+import homeQuery from './queries/home';
+import businessQuery from './queries/business';
+
 const API_URL = 'https://draw-dtz.begin.app/graphql';
 // const API_URL = 'http://localhost:3333/graphql';
 
-const query = `
-{  
-    header {
-        name,
-        avatarImg,
-        headerTagline,
-        headerParagraph,
-        contactEmail
-    }
-    work {
-        title,
-        para,
-        imageSrc,
-        url
-    }
-    about {
-        aboutParaOne,
-        aboutParaTwo,
-        aboutParaThree,
-        aboutParaFour,
-        aboutImage
-    }
-    skills {
-        img,
-        para,
-        references {
-            title,
-            description,
-            link
-        }
-    }
-    contact {
-        contactSubHeading
-        social {
-            img
-            url
-        }
-    }
-}`;
-
-async function queryData() {
+export async function queryHome() {
     let result = await fetch(API_URL, {
         method: 'post',
-        body: JSON.stringify({query})
+        body: JSON.stringify({ query: homeQuery})
     });
 
     let response = await result.json();
     loadLocalImages(response);
 
     return response;
+}
+
+export async function queryBusiness() {
+    let result = await fetch(API_URL, {
+        method: 'post',
+        body: JSON.stringify({ query: businessQuery})
+    });
+    return await result.json();
 }
 
 function loadLocalImages({ data }) {
@@ -69,5 +40,3 @@ function loadLocalImages({ data }) {
         }
     });
 }
-
-export default queryData;

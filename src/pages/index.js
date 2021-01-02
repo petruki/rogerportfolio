@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Fade from 'react-reveal/Fade';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -12,13 +11,13 @@ import Skills from '../components/skills';
 import Footer from '../components/Footer';
 
 // Service
-import queryData from '../service';
+import { queryHome } from '../service/api';
 
 const IndexPage = () => {
   const [data, setData] = useState(undefined);
 
   useState(() => {
-    queryData().then(response => {
+    queryHome().then(response => {
       setData(response.data);
     });
   });
@@ -28,11 +27,11 @@ const IndexPage = () => {
       <SEO title="Roger's Portfolio" />
       {data ?
         <div>
-          <Header header={data.header}></Header>
-          <Work work={data.work}></Work>
-          <About about={data.about}></About>
-          <Skills skills={data.skills}></Skills>
-          <Footer contact={data.contact} header={data.header}></Footer>
+          <Header header={data.header} />
+          <Work work={data.work} />
+          <About about={data.about} />
+          <Skills skills={data.skills} />
+          <Footer contact={data.contact} header={data.header} />
         </div>
       : ''}
     </Layout>

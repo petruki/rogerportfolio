@@ -26,14 +26,30 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/icon.png',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Roger\'s Portfolio Website',
+        short_name: 'My Portfolio',
+        start_url: '/',
+        background_color: '#1a1a1a',
+        theme_color: '#1a1a1a',
+        display: 'standalone',
+        icon: 'src/images/avatar.png',
+        crossOrigin: 'use-credentials',
       },
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-smoothscroll',
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+        precachePages: ['/', '/business-card']
+      }
+    },
   ],
   pathPrefix: '/rogerportfolio',
 };
