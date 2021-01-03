@@ -15,6 +15,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    'gatsby-plugin-use-query-params',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -47,7 +48,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-offline',
       options: {
-        precachePages: ['/', '/business-card']
+        precachePages: ['/']
       }
     },
   ],
