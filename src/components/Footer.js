@@ -20,8 +20,7 @@ const Footer = ({ contact, header }) => {
                 key={index}
                 href={socialLink.url}
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
                 <img src={socialLink.img} alt="icons"></img>
               </a>
             ))}

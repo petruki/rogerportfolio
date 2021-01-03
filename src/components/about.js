@@ -2,6 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 
+const AboutParagraph = ({ about }) => {
+  return (
+    <div>
+      {about.map((para, i) =>
+        <p key={i}>{para}</p>
+      )}
+    </div>
+  );
+};
+
 const About = ({ about }) => {
   return (
     <div className="secion" id="about" style={{ background: '#1a1a1a' }}>
@@ -11,18 +21,7 @@ const About = ({ about }) => {
             <Fade bottom cascade>
               <h1>About Me</h1>
             </Fade>
-            <p>
-              {about.aboutParaOne}
-              <br></br>
-              <br></br>
-              {about.aboutParaTwo}
-              <br></br>
-              <br></br>
-              {about.aboutParaThree}
-              <br></br>
-              <br></br>
-              {about.aboutParaFour}
-            </p>
+            <AboutParagraph about={about.about} />
           </div>
           <div className="image-wrapper">
             <img id="about-image" src={about.aboutImage} alt="about"></img>
@@ -35,6 +34,10 @@ const About = ({ about }) => {
 
 About.propTypes = {
   about: PropTypes.any.isRequired
+};
+
+AboutParagraph.propTypes = {
+  about: PropTypes.array.isRequired
 };
 
 export default About;

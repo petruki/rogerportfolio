@@ -14,10 +14,7 @@ const homeQuery = `
         url
     }
     about {
-        aboutParaOne,
-        aboutParaTwo,
-        aboutParaThree,
-        aboutParaFour,
+        about,
         aboutImage
     }
     skills {

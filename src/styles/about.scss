@@ -33,6 +33,7 @@
       }
     }
     p {
+      padding-bottom: 1vh;
       @include media(">=tablet", "<desktop") {
         text-align: center;
       }
