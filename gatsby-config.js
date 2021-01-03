@@ -7,6 +7,7 @@ module.exports = {
     image: 'https://raw.githubusercontent.com/petruki/rogerportfolio/master/src/images/roger.png'
   },
   plugins: [
+    'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
@@ -23,7 +24,7 @@ module.exports = {
       options: {
         name: 'Roger\'s Portfolio',
         short_name: 'My Portfolio',
-        start_url: '/?card=1',
+        start_url: '/?view=card',
         background_color: '#1a1a1a',
         theme_color: '#1a1a1a',
         display: 'standalone',
@@ -31,13 +32,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
-    'gatsby-plugin-smoothscroll',
-    {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-        precachePages: ['/']
-      }
-    },
+    'gatsby-plugin-smoothscroll'
   ],
   pathPrefix: '/rogerportfolio',
 };
