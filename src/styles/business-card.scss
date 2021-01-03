@@ -24,6 +24,10 @@
         border: solid 1px #353535;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     .content {
         display: flex;
         box-shadow: 0px 0px 10px #606060;
@@ -33,40 +37,15 @@
         border-radius: 20px;
         margin: auto;
 
-        @include media(">=phone", "<lgphone") {
-            flex-direction: column;
-            width: 100%;
-
-            #avatar {
-                width: 60px;
-            }
-
-            .header, .detail, .qrcode {
-                padding-left: 0px;
-                padding-right: 0px;
-                margin-top: auto;
-            }
-        }
-    
-        @include media(">=lgphone", "<tablet") {
-            flex-direction: column;
-            width: 100%;
-        }
-    
-        @include media(">=tablet", "<desktop") {
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
         .email-link {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: antiquewhite;
             text-decoration: none;
           }
           
         .email-link:hover {
-            color: black;
+            transition: all .2s;
+            color: rgb(82, 82, 82);
         }
 
         .header, .detail, .qrcode {
@@ -89,28 +68,6 @@
             margin-top: 4vh;
             padding-left: 10vh;
             padding-right: 10vh;
-        }
-
-        @include media(">=phone", "<lgphone") {
-            .header, .detail, .qrcode {
-                padding-left: 0px;
-                padding-right: 0px;
-                margin-top: auto;
-            }
-        }
-
-        @include media(">=lgphone", "<tablet") {
-            .header, .detail, .qrcode {
-                padding-left: 0px;
-                padding-right: 0px;
-            }
-        }
-
-        @include media(">=tablet", "<desktop") {
-            .header, .detail, .qrcode {
-                padding-left: 0px;
-                padding-right: 0px;
-            }
         }
     
         .social-icons {
@@ -145,5 +102,25 @@
             box-shadow: 0 0 10px #fff;
         }
 
+        
+        @include media(">=phone", "<desktop") {
+            flex-direction: column;
+            width: 100%;
+
+            #avatar {
+                width: 80px;
+                margin-right: 3vh;
+            }
+
+            .header, .detail, .qrcode {
+                padding-left: 0px;
+                padding-right: 0px;
+                margin-top: auto;
+            }
+
+            .header {
+                display: flex;
+            }
+        }
     }
 }

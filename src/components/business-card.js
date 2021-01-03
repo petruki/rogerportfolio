@@ -48,7 +48,9 @@ const BusinessCard = ({ contact, header }) => {
                             </div>
                         </div>
                         <div className="qrcode">
-                            <img id="qrcode" src={qrCode}></img>
+                            <a href={window.location.href.split('?')[0]}>
+                                <img id="qrcode" src={qrCode}></img>
+                            </a>
                         </div>
                     </Fade>
                 </div>

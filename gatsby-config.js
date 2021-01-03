@@ -21,26 +21,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/icon.png',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'Roger\'s Portfolio Website',
+        name: 'Roger\'s Portfolio',
         short_name: 'My Portfolio',
         start_url: '/?card=1',
         background_color: '#1a1a1a',
-        theme_color: '#fff',
+        theme_color: '#1a1a1a',
         display: 'standalone',
         icon: 'src/images/icon.png',
-        crossOrigin: 'use-credentials',
       },
     },
     'gatsby-plugin-sass',
