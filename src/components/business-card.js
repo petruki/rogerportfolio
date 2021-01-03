@@ -19,7 +19,7 @@ const BusinessCard = ({ contact, header }) => {
                 <div className="content">
                     <Fade big>
                         <div className="header">
-                            <a href="/">
+                            <a href={window.location.href.split('?')[0]}>
                                 <img id="avatar" src={header.avatarImg} alt="avatar"></img><br />
                             </a>
                             <h1>Roger</h1>

@@ -37,7 +37,7 @@ module.exports = {
         short_name: 'My Portfolio',
         start_url: '/?card=1',
         background_color: '#1a1a1a',
-        theme_color: '#1a1a1a',
+        theme_color: '#fff',
         display: 'standalone',
         icon: 'src/images/icon.png',
         crossOrigin: 'use-credentials',
