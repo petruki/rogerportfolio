@@ -26,22 +26,20 @@ const Skills = ({ skills }) => {
               <div className="skill select" key={id}>
                 <img src={skill.img} alt="css"></img>
                 <p>{skill.para}</p>
-                {skill.references && skill.references.length ?
-                  <a onClick={() => openModal(skill)} className="btn">[+] References</a> : ''
-                }
+                {skill.references && skill.references.length &&
+                  <a onClick={() => openModal(skill)} className="btn">[+] References</a>}
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {selectedSkill ?
+      {selectedSkill &&
         <SkillSamples 
           img={selectedSkill.img}
           references={selectedSkill.references}
           closeModal={closeModal} 
-          modalIsOpen={modalIsOpen} /> : ''
-      }
+          modalIsOpen={modalIsOpen} />}
     </div>
   );
 };

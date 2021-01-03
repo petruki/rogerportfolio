@@ -4,11 +4,11 @@ import Fade from 'react-reveal/Fade';
 
 const AboutParagraph = ({ about }) => {
   return (
-    <div>
+    <>
       {about.map((para, i) =>
         <p key={i}>{para}</p>
       )}
-    </div>
+    </>
   );
 };
 

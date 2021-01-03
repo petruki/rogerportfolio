@@ -28,8 +28,8 @@ const IndexPage = () => {
   }, [data]);
   
   return (
-    <div>
-      {data ? card ?
+    <>
+      {data && (card ?
       <BusinessCard contact={data.contact} header={data.header} /> :
       <Layout>
         <SEO title="Roger's Portfolio" />
@@ -38,8 +38,8 @@ const IndexPage = () => {
         <About about={data.about} />
         <Skills skills={data.skills} />
         <Footer contact={data.contact} header={data.header} />
-      </Layout> : ''}
-    </div>
+      </Layout>)}
+    </>
   );
 };
 

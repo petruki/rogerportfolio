@@ -11,8 +11,7 @@ const Navbar = () => {
             onClick={() => scrollTo('#home')}
             onKeyPress={() => scrollTo('#home')}
             className="name"
-            tabIndex={0}
-          >
+            tabIndex={0}>
             Portfolio.
           </div>
           <div className="links-wrapper">
