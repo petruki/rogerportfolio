@@ -27,20 +27,20 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-aa4abd5d1954fb9307bd.js"
+    "url": "webpack-runtime-3d6137795428494395ae.js"
   },
   {
-    "url": "framework-741ade27086b2708e961.js"
+    "url": "framework-dbb498007a7447f28d8e.js"
   },
   {
-    "url": "app-9a6054ae3c6fc0aca89d.js"
+    "url": "app-b337c8822ce04139e4c5.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "7ebdc938edec1c23df3056365d3d08c9"
+    "revision": "09b7ad8dc6b43a19a1846227cb838b58"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-b0556ce5127c1a3e2490.js"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -48,25 +48,22 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "aeab6cd42f62a002e97c5a8327feeac2"
+    "revision": "69c6796df5fca3e1b8b7e73ccbe323de"
   },
   {
-    "url": "polyfill-303683f6c6a5fb752dca.js"
+    "url": "polyfill-ca8adf9770cfeec4c092.js"
   },
   {
     "url": "styles.8c4d9c854033e630152c.css"
   },
   {
-    "url": "styles-7d4153d260c0197f0043.js"
+    "url": "styles-e9d24b1846c7d6eb9685.js"
   },
   {
-    "url": "8fc057d4051be76a301dd8caa80ff689501d36df-365fafea0de15828c178.js"
+    "url": "e50e9c162871c1d91fba5ce567a5656e16dc6783-9895b11d426f0f33c6d5.js"
   },
   {
-    "url": "64e484565b0fbe8858acd4f1adf8406c774d4e14-0dc83d4d8585e58da8e2.js"
-  },
-  {
-    "url": "component---src-pages-index-js-cc8cf05ea3cddf6c6e03.js"
+    "url": "component---src-pages-index-js-09fd811cf92a61251441.js"
   },
   {
     "url": "page-data/index/page-data.json",
@@ -75,13 +72,6 @@ self.__precacheManifest = [
   {
     "url": "page-data/sq/d/32046230.json",
     "revision": "fcfccb56210e633b9c8216590905215d"
-  },
-  {
-    "url": "component---src-pages-business-card-js-d186424a59703f5955c7.js"
-  },
-  {
-    "url": "page-data/business-card/page-data.json",
-    "revision": "b7c33a4267f8b1786595056666fbcab6"
   },
   {
     "url": "manifest.webmanifest",
@@ -177,7 +167,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/rogerportfolio/app-9a6054ae3c6fc0aca89d.js`))) {
+  if (!resources || !(await caches.match(`/rogerportfolio/app-b337c8822ce04139e4c5.js`))) {
     return await fetch(event.request)
   }
 
