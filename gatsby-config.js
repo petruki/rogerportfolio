@@ -35,11 +35,11 @@ module.exports = {
       options: {
         name: 'Roger\'s Portfolio Website',
         short_name: 'My Portfolio',
-        start_url: '/',
+        start_url: '/?card=1',
         background_color: '#1a1a1a',
         theme_color: '#1a1a1a',
         display: 'standalone',
-        icon: 'src/images/avatar.png',
+        icon: 'src/images/icon.png',
         crossOrigin: 'use-credentials',
       },
     },
