@@ -27,17 +27,17 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-edbeb99e63455c0c51c2.js"
+    "url": "webpack-runtime-a3dc26b23578e28b8423.js"
   },
   {
     "url": "framework-dbb498007a7447f28d8e.js"
   },
   {
-    "url": "app-2d08454d94af6263e1bb.js"
+    "url": "app-a0a6c119ff0abe01016c.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "eb973530c56fe4c019ab21b4374b8c39"
+    "revision": "e8acc63efd51fa153131bdb1c646863f"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-b0556ce5127c1a3e2490.js"
@@ -48,13 +48,13 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "0440ab95e7af32f7c2e13f4900b2351b"
+    "revision": "63826a5a3b8def67ae81d9efd6198878"
   },
   {
     "url": "polyfill-ca8adf9770cfeec4c092.js"
   },
   {
-    "url": "styles.2ee04bf754d6b44c3f6b.css"
+    "url": "styles.6447ae93a5eede10e271.css"
   },
   {
     "url": "styles-e9d24b1846c7d6eb9685.js"
@@ -63,7 +63,7 @@ self.__precacheManifest = [
     "url": "e50e9c162871c1d91fba5ce567a5656e16dc6783-9895b11d426f0f33c6d5.js"
   },
   {
-    "url": "component---src-pages-index-js-77b2b0b61232283ade31.js"
+    "url": "component---src-pages-index-js-2d3d2d80bf3a36ac4765.js"
   },
   {
     "url": "page-data/index/page-data.json",
@@ -75,7 +75,7 @@ self.__precacheManifest = [
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "7a95dee5032689e000496c143271999d"
+    "revision": "54f760d8c81154aac4b4aeb67038fd76"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -167,7 +167,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/rogerportfolio/app-2d08454d94af6263e1bb.js`))) {
+  if (!resources || !(await caches.match(`/rogerportfolio/app-a0a6c119ff0abe01016c.js`))) {
     return await fetch(event.request)
   }
 
