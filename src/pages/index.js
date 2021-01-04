@@ -14,10 +14,11 @@ import Footer from '../components/Footer';
 // Service
 import { queryBusiness, queryHome } from '../service/api';
 import BusinessCard from '../components/business-card';
-import Activities from '../components/activities';
+import Activity from '../components/activity';
 
 const IndexPage = () => {
-  const [view] = useQueryParam('view', StringParam);
+  const [viewParam] = useQueryParam('view', StringParam);
+  const [view, setView] = useState(viewParam);
   const [data, setData] = useState(undefined);
 
   useEffect(() => {
@@ -37,16 +38,18 @@ const IndexPage = () => {
             <BusinessCard contact={data.contact} header={data.header} />
           </>
         );
-      case 'activities':
+      case 'activity':
         return (
           <>
-            <SEO title="Roger's Portfolio" />
-            <Activities header={data.header} />
+            <Layout setView={setView} view={view}>
+              <SEO title="Roger's Portfolio" />
+              <Activity />
+            </Layout>
           </>
         );
       default:
         return (
-          <Layout>
+          <Layout setView={setView} view={view}>
             <SEO title="Roger's Portfolio" />
             <Header header={data.header} />
             <Work work={data.work} />

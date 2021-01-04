@@ -10,17 +10,19 @@ import PropTypes from 'prop-types';
 import Navbar from './Navbar';
 import '../styles/mains.scss';
 
-const Layout = ({ children }) => {
+const Layout = (props) => {
   return (
     <>
-      <Navbar></Navbar>
-      <main>{children}</main>
+      <Navbar setView={props.setView} view={props.view}></Navbar>
+      <main>{props.children}</main>
     </>
   );
 };
 
 Layout.propTypes = {
-  children: PropTypes.any.isRequired
+  children: PropTypes.any.isRequired,
+  setView: PropTypes.func,
+  view: PropTypes.string
 };
 
 
