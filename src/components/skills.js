@@ -26,7 +26,7 @@ const Skills = ({ skills }) => {
               <div className="skill select" key={id}>
                 <img src={skill.img} alt="css"></img>
                 <p>{skill.para}</p>
-                {skill.references && skill.references.length &&
+                {skill.references && skill.references.length > 0 &&
                   <a onClick={() => openModal(skill)} className="btn">[+] References</a>}
               </div>
             ))}

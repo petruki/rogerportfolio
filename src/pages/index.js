@@ -30,12 +30,14 @@ const IndexPage = () => {
   }, [data]);
   
   if (data) {
+    const { portfolio } = data;
+    
     switch (view) {
       case 'card':
         return (
           <>
             <SEO title="Roger's Portfolio" />
-            <BusinessCard contact={data.contact} header={data.header} />
+            <BusinessCard contact={portfolio.contact} header={portfolio.header} />
           </>
         );
       case 'activity':
@@ -51,11 +53,11 @@ const IndexPage = () => {
         return (
           <Layout setView={setView} view={view}>
             <SEO title="Roger's Portfolio" />
-            <Header header={data.header} />
-            <Work work={data.work} />
-            <About about={data.about} />
-            <Skills skills={data.skills} />
-            <Footer contact={data.contact} header={data.header} />
+            <Header header={portfolio.header} />
+            <Work work={portfolio.work} />
+            <About about={portfolio.about} />
+            <Skills skills={portfolio.skills} />
+            <Footer contact={portfolio.contact} header={portfolio.header} />
           </Layout>);
     }
   }

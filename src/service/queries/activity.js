@@ -1,7 +1,9 @@
 const activityQuery = `
-{  
-    activity {
-        urls
+{
+    portfolio {
+        activity {
+            urls
+        }
     }
 }`;
 

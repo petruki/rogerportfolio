@@ -1,17 +1,19 @@
 const businessQuery = `
-{  
-    header {
-        name,
-        avatarImg,
-        headerTagline,
-        headerParagraph,
-        contactEmail
-    }
-    contact {
-        contactSubHeading
-        social {
-            img
-            url
+{
+    portfolio {
+        header {
+            name,
+            avatarImg,
+            headerTagline,
+            headerParagraph,
+            contactEmail
+        }
+        contact {
+            contactSubHeading
+            social {
+                img
+                url
+            }
         }
     }
 }`;

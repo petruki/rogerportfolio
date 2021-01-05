@@ -15,7 +15,7 @@ export async function queryHome() {
     });
 
     let response = await result.json();
-    loadLocalImages(response);
+    loadLocalImages(response.data);
 
     return response;
 }
@@ -36,14 +36,14 @@ export async function queryActivity() {
     return await result.json();
 }
 
-function loadLocalImages({ data }) {
-    data.work.map(project => {
+function loadLocalImages({ portfolio }) {
+    portfolio.work.map(project => {
         if (project.imageSrc.indexOf('http') != 0) {
             project.imageSrc = imagesBank[project.imageSrc];
         }
     });
 
-    data.skills.map(skill => {
+    portfolio.skills.map(skill => {
         if (skill.img.indexOf('http') != 0) {
             skill.img = imagesBank[skill.img];
         }

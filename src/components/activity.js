@@ -46,16 +46,16 @@ const Activity = () => {
   };
 
   useState(() => {
-    queryActivity().then(response => setUrls(response.data.activity.urls));
+    queryActivity().then(response => setUrls(response.data.portfolio.activity.urls));
   });
 
   return (
     <div id="activity-container" className="container">
-      <div className="activities-wrapper">
+      <div className="activity-wrapper">
         <h1>Activity</h1>
         {loading && <img src={loadingSvg}></img>}
         {urls &&
-          <div ref={activitiesPanel} className={`activities ${!loading && 'show'}`}>
+          <div ref={activitiesPanel} className={`activity ${!loading && 'show'}`}>
             {viewPage().map((url, i) =>
               <div className="post" key={i}>
                 <iframe src={url} width="500" height="500" onLoad={showIframe} />
@@ -64,7 +64,7 @@ const Activity = () => {
             )}
           </div>
         }
-        <div id="activities-pagination">
+        <div id="activity-pagination">
           <a ref={prevBtn} className="btn-disable" onClick={() => prevPage()}>Previous</a>
           <a ref={nextBtn} className="btn" onClick={() => nextPage()}>Next</a>
         </div>

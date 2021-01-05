@@ -1,36 +1,38 @@
 const homeQuery = `
-{  
-    header {
-        name,
-        avatarImg,
-        headerTagline,
-        headerParagraph,
-        contactEmail
-    }
-    work {
-        title,
-        para,
-        imageSrc,
-        url
-    }
-    about {
-        about,
-        aboutImage
-    }
-    skills {
-        img,
-        para,
-        references {
-            title,
-            description,
-            link
+{
+    portfolio {
+        header {
+            name,
+            avatarImg,
+            headerTagline,
+            headerParagraph,
+            contactEmail
         }
-    }
-    contact {
-        contactSubHeading
-        social {
-            img
+        work {
+            title,
+            para,
+            imageSrc,
             url
+        }
+        about {
+            about,
+            aboutImage
+        }
+        skills {
+            img,
+            para,
+            references {
+                title,
+                description,
+                link
+            }
+        }
+        contact {
+            contactSubHeading
+            social {
+                img
+                url
+            }
         }
     }
 }`;

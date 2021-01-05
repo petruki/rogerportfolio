@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const Navbar = (props) => {
+  const navBar = useRef();
+  let prevScrollpos;
 
   const onSelectMenu = (page) => {
     if (props.view === 'activity')
@@ -10,12 +12,25 @@ const Navbar = (props) => {
     scrollTo(page);
   };
 
-  const getSticky = () => {
-    return props.view == 'activity' ? 'inherit' : 'sticky';
+  const scrollMenuHandler = () => {
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          navBar.current.style.opacity = '1';
+        } else {
+          navBar.current.style.opacity = '0';
+        }
+        prevScrollpos = currentScrollPos;
+    };
   };
 
+  scrollMenuHandler();
+
   return (
-    <div className="section" style={{ position: getSticky(), top: 0, zIndex: 1, background: 'black' }}>
+    <div
+      ref={navBar} 
+      className="section sticky-transition" 
+      style={{ position: 'sticky', top: 0, zIndex: 1, background: 'black' }}>
       <div className="container">
         <div className="navbar-wrapper">
           <div
