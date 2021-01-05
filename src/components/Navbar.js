@@ -15,7 +15,7 @@ const Navbar = (props) => {
   useEffect(() => {
     document.addEventListener('scroll', () => {
       var currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
+      if (currentScrollPos < 50 || prevScrollpos > currentScrollPos) {
         navBar.current.style.opacity = '1';
       } else {
         navBar.current.style.opacity = '0';
