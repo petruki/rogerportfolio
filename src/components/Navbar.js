@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
@@ -12,19 +12,17 @@ const Navbar = (props) => {
     scrollTo(page);
   };
 
-  const scrollMenuHandler = () => {
-    window.onscroll = function () {
-        var currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-          navBar.current.style.opacity = '1';
-        } else {
-          navBar.current.style.opacity = '0';
-        }
-        prevScrollpos = currentScrollPos;
-    };
-  };
-
-  scrollMenuHandler();
+  useEffect(() => {
+    document.addEventListener('scroll', () => {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        navBar.current.style.opacity = '1';
+      } else {
+        navBar.current.style.opacity = '0';
+      }
+      prevScrollpos = currentScrollPos;
+    });
+  });
 
   return (
     <div
