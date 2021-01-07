@@ -1,16 +1,27 @@
 .activity-wrapper {
   width: 80vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 5vh;
   margin-top: 3vh;
+  margin-left: auto;
+  margin-right: auto;
 
   img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  hr {
+    color: #4a4a4a;
+  }
+
+  span {
+    margin-left: 1vh;
   }
 
   @keyframes fadeIn {
@@ -25,13 +36,17 @@
 
   .post, iframe, .activity {
     width: inherit;
-    max-width: 80vh;
     border-radius: 20px;
+    text-align: center;
+  }
+
+  iframe {
+    max-width: 800px;
   }
 
   #activity-pagination {
-    position: fixed;
-    bottom: 2vh;
+    margin-top: 3vh;
+    text-align: center;
   }
 
   .btn {
@@ -66,5 +81,26 @@
   .show {
     animation: 1s ease-out 0s 1 fadeIn;
     opacity: 1;
+  }
+
+  #slider {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+  }
+
+  .topic {
+    text-align: center;
+    
+    a {
+      text-decoration: none;
+      font-size: larger;
+      color: white;
+      cursor: pointer;
+    }
   }
 }

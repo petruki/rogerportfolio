@@ -2,7 +2,8 @@ const activityQuery = `
 {
     portfolio {
         activity {
-            urls
+            tags,
+            url
         }
     }
 }`;
