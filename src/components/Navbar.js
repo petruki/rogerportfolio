@@ -1,27 +1,44 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
+let selectMenu;
+let prevScrollpos;
+let throttle;
+
 const Navbar = (props) => {
   const navBar = useRef();
-  let prevScrollpos;
 
   const onSelectMenu = (page) => {
+    selectMenu = true;
     if (props.view === 'activity')
       props.setView('');
     scrollTo(page);
+    throttleMenuSelcetion();
   };
 
-  useEffect(() => {
-    document.addEventListener('scroll', () => {
+  const throttleMenuSelcetion = () => {
+    if (!throttle)
+      throttle = setTimeout(() => { 
+        selectMenu = false; 
+        throttle = undefined; 
+      }, 2000);
+  };
+
+  const scrollHandler = () => {
+    if (!selectMenu) {
       var currentScrollPos = window.pageYOffset;
-      if (currentScrollPos < 50 || prevScrollpos > currentScrollPos) {
-        navBar.current.style.opacity = '1';
+      if (prevScrollpos > currentScrollPos) {
+        navBar.current.style.top = '0px';
       } else {
-        navBar.current.style.opacity = '0';
+        navBar.current.style.top = '-100px';
       }
       prevScrollpos = currentScrollPos;
-    });
+    }
+  };
+
+  useState(() => {
+    document.addEventListener('scroll', () => scrollHandler());
   });
 
   return (
