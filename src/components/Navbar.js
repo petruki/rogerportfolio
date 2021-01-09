@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import scrollTo from 'gatsby-plugin-smoothscroll';
+import { fromEvent, interval } from 'rxjs';
+import { throttle } from 'rxjs/operators';
 
 let selectMenu;
 let prevScrollpos;
-let throttle;
+let throttleTimer;
 
 const Navbar = (props) => {
   const navBar = useRef();
@@ -18,10 +20,10 @@ const Navbar = (props) => {
   };
 
   const throttleMenuSelcetion = () => {
-    if (!throttle)
-      throttle = setTimeout(() => { 
+    if (!throttleTimer)
+    throttleTimer = setTimeout(() => { 
         selectMenu = false; 
-        throttle = undefined; 
+        throttleTimer = undefined; 
       }, 2000);
   };
 
@@ -38,7 +40,9 @@ const Navbar = (props) => {
   };
 
   useState(() => {
-    document.addEventListener('scroll', () => scrollHandler());
+    fromEvent(document, 'scroll')
+      .pipe(throttle(() => interval(200)))
+      .subscribe(() => scrollHandler());
   });
 
   return (
