@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import { fromEvent, interval } from 'rxjs';
@@ -39,16 +39,10 @@ const Navbar = (props) => {
     }
   };
 
-  useState(() => {
+  useEffect(() => {
     fromEvent(document, 'scroll')
       .pipe(throttle(() => interval(200)))
       .subscribe(() => scrollHandler());
-  });
-
-  useEffect(() => {
-    if (typeof window === 'undefined' || !window.document) {
-      return;
-    }
   }, []);
 
   return (
