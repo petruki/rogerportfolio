@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useQueryParam, StringParam } from 'use-query-params';
 
 import Layout from '../components/layout';
@@ -21,13 +21,13 @@ const IndexPage = () => {
   const [view, setView] = useState(viewParam);
   const [data, setData] = useState(undefined);
 
-  useEffect(() => {
+  useState(() => {
     if (view === 'card') {
       queryBusiness().then(response => setData(response.data));
     } else {
       queryHome().then(response => setData(response.data));
     }
-  }, [data]);
+  });
   
   if (data) {
     const { portfolio } = data;
@@ -42,12 +42,10 @@ const IndexPage = () => {
         );
       case 'activity':
         return (
-          <>
-            <Layout setView={setView} view={view}>
-              <SEO title="Roger's Portfolio" />
-              <Activity />
-            </Layout>
-          </>
+          <Layout setView={setView} view={view}>
+            <SEO title="Roger's Portfolio" />
+            <Activity />
+          </Layout>
         );
       default:
         return (
