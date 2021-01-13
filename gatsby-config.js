@@ -7,7 +7,6 @@ module.exports = {
     image: 'https://raw.githubusercontent.com/petruki/rogerportfolio/master/src/images/roger.png'
   },
   plugins: [
-    'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
