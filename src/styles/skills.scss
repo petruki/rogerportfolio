@@ -5,6 +5,10 @@
   align-items: center;
   text-align: center;
 
+  *:focus {
+    outline: 0;
+  }
+
   h1 {
     font-size: 3rem;
     line-height: 20px;
