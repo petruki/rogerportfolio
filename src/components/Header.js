@@ -14,11 +14,11 @@ const Header = ({ header }) => {
           </Fade>
           <Fade big>
             <div className="heading-wrapper">
-              {header.headerTagline.map((header, i) => {
+              {header.headerTagline.map((_header, i) => {
                 if (i % 2) 
-                  return <LightSpeed key={i} left><h1>{header}</h1></LightSpeed>;
+                  return <LightSpeed key={i} left><h1>{_header}</h1></LightSpeed>;
                 else
-                  return <LightSpeed key={i} right><h1>{header}</h1></LightSpeed>;
+                  return <LightSpeed key={i} right><h1>{_header}</h1></LightSpeed>;
               })}
             </div>
           </Fade>

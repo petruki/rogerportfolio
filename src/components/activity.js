@@ -73,7 +73,7 @@ const Activity = () => {
       setActivity(response.data.portfolio.activity);
       setActivityOrigin(response.data.portfolio.activity);
       setTags([...new Set(response.data.portfolio.activity
-        .map(activity => activity.tags)
+        .map(_activity => _activity.tags)
         .flat())]);
 
       nextBtn.current.className = 
@@ -98,10 +98,10 @@ const Activity = () => {
         {loading && <img src={loadingSvg}></img>}
         {activity &&
           <div ref={activitiesPanel} className={`activity ${!loading && 'show'}`}>
-            {viewPage().map((activity, i) =>
+            {viewPage().map((_activity, i) =>
               <div className="post" key={i}>
-                <iframe src={activity.url} width="500" height="500" onLoad={() => setLoading(false)} />
-                <br />{activity.tags.map((tag, i) => <span key={i}>#{tag}</span>)}
+                <iframe src={_activity.url} width="500" height="500" onLoad={() => setLoading(false)} />
+                <br />{_activity.tags.map((tag, _i) => <span key={_i}>#{tag}</span>)}
                 <p />
               </div>
             )}

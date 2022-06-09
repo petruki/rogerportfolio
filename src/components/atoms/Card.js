@@ -9,9 +9,7 @@ const Card = ({ heading, paragraph, imgUrl, projectLink }) => {
         borderRadius: '50px',
         backgroundSize: '100%',
         backgroundImage:
-          'linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)),url(' +
-          imgUrl +
-          ')'
+          'linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)), url(' + imgUrl + ')',
       }}
     >
       <div className="content">
@@ -32,7 +30,7 @@ const Card = ({ heading, paragraph, imgUrl, projectLink }) => {
 Card.propTypes = {
   heading: PropTypes.string.isRequired,
   paragraph: PropTypes.string.isRequired,
-  imgUrl: PropTypes.string.isRequired,
+  imgUrl: PropTypes.any.isRequired,
   projectLink: PropTypes.string
 };
 

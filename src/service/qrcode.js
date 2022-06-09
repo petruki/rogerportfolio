@@ -7,8 +7,7 @@ async function getQRCode(destinationUrl) {
     });
 
     const blob = await result.blob();
-    var img = URL.createObjectURL(blob);
-    return img;
+    return URL.createObjectURL(blob);
 }
 
 export default getQRCode;

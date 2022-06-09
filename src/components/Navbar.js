@@ -20,11 +20,12 @@ const Navbar = (props) => {
   };
 
   const throttleMenuSelcetion = () => {
-    if (!throttleTimer)
-    throttleTimer = setTimeout(() => { 
-        selectMenu = false; 
-        throttleTimer = undefined; 
-      }, 2000);
+    if (!throttleTimer) {
+      throttleTimer = setTimeout(() => { 
+          selectMenu = false; 
+          throttleTimer = undefined; 
+        }, 2000);
+    }
   };
 
   const scrollHandler = () => {

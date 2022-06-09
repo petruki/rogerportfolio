@@ -18,4 +18,4 @@ export * as oracleSkillImg from './skills/oracle.png';
 export * as springSkillImg from './skills/spring.png';
 export * as graphqlSkillImg from './skills/graphql.svg';
 export * as sonarSkillImg from './skills/sonar.svg';
-export * as travisSkillImg from './skills/travis.svg';
+export * as githubActionsImg from './skills/githubActions.png';

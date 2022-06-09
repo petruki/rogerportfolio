@@ -5,8 +5,9 @@ import homeQuery from './queries/home';
 import businessQuery from './queries/business';
 import activityQuery from './queries/activity';
 
+// eslint-disable-next-line no-unused-vars
+const API_DEV_URL = 'http://localhost:3333/graphql';
 const API_URL = 'https://draw-dtz.begin.app/graphql';
-// const API_URL = 'http://localhost:3333/graphql';
 
 export async function queryHome() {
     let result = await fetch(API_URL, {
@@ -25,7 +26,7 @@ export async function queryBusiness() {
         method: 'post',
         body: JSON.stringify({ query: businessQuery})
     });
-    return await result.json();
+    return result.json();
 }
 
 export async function queryActivity() {
@@ -33,19 +34,19 @@ export async function queryActivity() {
         method: 'post',
         body: JSON.stringify({ query: activityQuery})
     });
-    return await result.json();
+    return result.json();
 }
 
 function loadLocalImages({ portfolio }) {
     portfolio.work.map(project => {
         if (project.imageSrc.indexOf('http') != 0) {
-            project.imageSrc = imagesBank[project.imageSrc];
+            project.imageSrc = imagesBank[project.imageSrc].default;
         }
     });
 
     portfolio.skills.map(skill => {
         if (skill.img.indexOf('http') != 0) {
-            skill.img = imagesBank[skill.img];
+            skill.img = imagesBank[skill.img].default;
         }
     });
 }
