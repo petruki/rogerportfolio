@@ -1,0 +1,22 @@
+name: Master CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-deploy:
+    name: Build - Deploy
+    runs-on: ubuntu-latest
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+    env:
+      PREFIX_PATHS: true
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: gh-pages
