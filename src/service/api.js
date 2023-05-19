@@ -7,7 +7,7 @@ import activityQuery from './queries/activity';
 
 // eslint-disable-next-line no-unused-vars
 const API_DEV_URL = 'http://localhost:3333/graphql';
-const API_URL = 'https://draw-dtz.begin.app/graphql';
+const API_URL = 'https://draw-dtz-staging.begin.app/graphql';
 
 export async function queryHome() {
     let result = await fetch(API_URL, {
